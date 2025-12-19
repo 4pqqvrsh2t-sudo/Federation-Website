@@ -215,4 +215,7 @@ if(addTabBtn) addTabBtn.addEventListener('click', ()=>{
    ====================================================== */
 PAGES = loadPagesFromStorage();
 if(PAGES.length>0) loadPage(PAGES[0].id);
+/* intro.js */
+/* Future logic to show/hide the overlay will go here */
+
 </script>
