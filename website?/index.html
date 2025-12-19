@@ -113,5 +113,28 @@
   <div id="intro-overlay" style="display: none;">
     <!-- Future intro content goes here -->
   </div>
+
+
+<!-- Maintenance Page -->
+<div id="maintenance" style="display: none;">
+  <div id="maintenanceStatus">
+    <h1>FEDERATION NETWORK UNSTABLE</h1>
+    <p id="maintenanceMessage">
+      External interference detected. Access is restricted.
+    </p>
+  </div>
+  <div id="maintenanceAction">
+    <!-- Retry and Password blocks -->
+    <div id="retryBlock">
+      <button id="retryAccess">Retry Connection</button>
+    </div>
+    <div id="passwordBlock" style="display: none;">
+      <input type="password" id="accessPassword" placeholder="Federation Access Code" />
+      <button id="submitPassword">Authenticate</button>
+    </div>
+    <!-- Manual Bypass -->
+    <button id="adminBypass" aria-hidden="true">Bypass</button>
+  </div>
+</div>
 </body>
 </html>
