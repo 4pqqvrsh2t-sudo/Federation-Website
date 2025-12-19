@@ -215,4 +215,5 @@ if(addTabBtn) addTabBtn.addEventListener('click', ()=>{
    ====================================================== */
 PAGES = loadPagesFromStorage();
 if(PAGES.length>0) loadPage(PAGES[0].id);
+
 </script>
