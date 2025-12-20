@@ -1,6 +1,6 @@
 <script>
 /* ======================================================
-   Federation Wiki JS - Full Copy-Paste Version
+   Federation Wiki JS - Fixed for Syntax / IDs Only
    ====================================================== */
 
 /* ======================================================
@@ -50,13 +50,15 @@ function loadPage(pid){
     tab.sections.forEach(section=>{
       const sectionEl = document.createElement('div');
       sectionEl.classList.add('section-container');
+      // Escape backticks in content to avoid syntax errors
+      const safeContent = (section.content || '').replace(/`/g,'\\`');
       sectionEl.innerHTML = `
         <div class="collapse-header">
           <span>${section.header}</span>
           <button class="edit-btn" data-edit-page="${page.id}" data-edit-tab="${tab.id}" data-edit-section="${section.id}">Edit</button>
         </div>
         <div class="collapse-content" style="display:${section.collapsed?'none':'block'}">
-          ${section.content}
+          ${safeContent}
         </div>`;
       tabEl.appendChild(sectionEl);
     });
@@ -68,20 +70,20 @@ function loadPage(pid){
 }
 
 /* ======================================================
-   5. Editor Modal Elements
+   5. Editor Modal Elements (IDs fixed to match HTML)
    ====================================================== */
-const editorModal = $('#editor-modal');
-const editorTitle = $('#editor-title');
-const editorContent = $('#editor-content');
-const codeArea = $('#editor-code');
-const editorSaveBtn = $('#editor-save');
-const editorSaveAndCloseBtn = $('#editor-save-close');
-const editorCloseBtn = $('#editor-close');
-const editorCloseNoSaveBtn = $('#editor-close-no-save');
-const editorRevertBtn = $('#editor-revert');
-const codeModeBtn = $('#editor-code-mode');
-const addTabBtn = $('#add-tab-btn');
-const newTabTitleInput = $('#new-tab-title');
+const editorModal = $('#editorModal');
+const editorTitle = $('#editorTitle');
+const editorContent = $('#editorContent');
+const codeArea = $('#codeArea');
+const editorSaveBtn = $('#editorSaveBtn');
+const editorSaveAndCloseBtn = $('#editorSaveAndCloseBtn');
+const editorCloseBtn = $('#editorCloseBtn');
+const editorCloseNoSaveBtn = $('#editorCloseNoSaveBtn');
+const editorRevertBtn = $('#editorRevertBtn');
+const codeModeBtn = $('#codeModeBtn');
+const addTabBtn = $('#addTabBtn');
+const newTabTitleInput = $('#newTabTitle');
 
 /* ======================================================
    6. Editor Modal Functions
@@ -215,5 +217,4 @@ if(addTabBtn) addTabBtn.addEventListener('click', ()=>{
    ====================================================== */
 PAGES = loadPagesFromStorage();
 if(PAGES.length>0) loadPage(PAGES[0].id);
-
 </script>
