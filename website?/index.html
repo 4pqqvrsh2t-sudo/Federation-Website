@@ -8,6 +8,23 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+<script>
+  // Save original WebSocket in case other scripts use it legitimately
+  const OriginalWebSocket = window.WebSocket;
+
+  // Override WebSocket
+  window.WebSocket = class {
+    constructor(url, protocols) {
+      // Only block GitHub Pages WS attempts
+      if (typeof url === 'string' && url.includes('github.io')) {
+        console.warn('Blocked WebSocket connection to:', url);
+        return {}; // Return dummy object
+      }
+      // Otherwise use the real WebSocket
+      return new OriginalWebSocket(url, protocols);
+    }
+  };
+</script>
 
 </head>
 <body>
