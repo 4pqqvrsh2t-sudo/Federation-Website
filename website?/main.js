@@ -72,18 +72,18 @@ function loadPage(pid){
 /* ======================================================
    5. Editor Modal Elements (IDs fixed to match HTML)
    ====================================================== */
-const editorModal = $('#editorModal');
-const editorTitle = $('#editorTitle');
-const editorContent = $('#editorContent');
-const codeArea = $('#codeArea');
-const editorSaveBtn = $('#editorSaveBtn');
-const editorSaveAndCloseBtn = $('#editorSaveAndCloseBtn');
-const editorCloseBtn = $('#editorCloseBtn');
-const editorCloseNoSaveBtn = $('#editorCloseNoSaveBtn');
-const editorRevertBtn = $('#editorRevertBtn');
-const codeModeBtn = $('#codeModeBtn');
-const addTabBtn = $('#addTabBtn');
-const newTabTitleInput = $('#newTabTitle');
+const editorModal = $('#editorModal');           // HTML has id="editorModal"
+const editorTitle = $('#editorTitle');           // HTML has id="editorTitle"
+const editorContent = $('#editorContent');       // HTML has id="editorContent"
+const codeArea = $('#codeArea');                 // HTML has id="codeArea"
+const editorSaveBtn = $('#editorSaveBtn');       // HTML has id="editorSaveBtn"
+const editorSaveAndCloseBtn = $('#editorSaveAndCloseBtn'); // HTML has id="editorSaveAndCloseBtn"
+const editorCloseBtn = $('#editorCloseBtn');     // HTML has id="editorCloseBtn"
+const editorCloseNoSaveBtn = $('#editorCloseNoSaveBtn'); // HTML has id="editorCloseNoSaveBtn"
+const editorRevertBtn = $('#editorRevertBtn');   // HTML has id="editorRevertBtn"
+const codeModeBtn = $('#codeModeBtn');           // HTML has id="codeModeBtn"
+const addTabBtn = $('#addTabBtn');               // HTML has id="addTabBtn"
+const newTabTitleInput = $('#newTabTitle');      // HTML has id="newTabTitle"
 
 /* ======================================================
    6. Editor Modal Functions
